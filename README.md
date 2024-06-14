@@ -19,7 +19,7 @@ intrinsics_color.py用于将intrinsics_color.txt写入到frame/intrinsic/下，�
 
       File "/home/hz/0mywork/PlaneRecNet/data/datasets.py", line 203, in <listcomp>
       k_matrix = np.asarray([float(words[i]) for i in range(2,18)]).reshape((4,4))[:3,:3]
-  ValueError: could not convert string to float: ''
+    ValueError: could not convert string to float: ''
 
 怀疑是代码本身的问题，但还是要关注一下这句代码的作用，现在只是对代码进行了替换
 --2024-6-14end
