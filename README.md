@@ -1,3 +1,13 @@
+### git小贴士
+
+    git init
+    git add . ':!scannet' ':!weights'
+
+因为scannet、weights中的文件太大了
+  
+    git commit -m "想输入什么就输入什么吧"
+    git pull
+    git push -u origin main
 # PlaneRecNet
 This is an official implementation for PlaneRecNet: A multi-task convolutional neural network provides instance segmentation for piece-wise planes and monocular depth estimation, and focus on the cross-task consistency between two branches.
 ![Network Architecture](/data/network_architecture.png)
