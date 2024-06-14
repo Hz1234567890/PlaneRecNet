@@ -193,12 +193,23 @@ class ScanNetDataset(PlaneAnnoDataset):
         sens_name = rgb_file_name.split('/')[0]
         pose_file_name = os.path.join(sens_name, "frame", "intrinsic", sens_name + ".txt")
         pose_path = os.path.join(self.root, pose_file_name)
+
+        with open(pose_path) as f:
+            lines = f.readlines()
+        
+        # Assuming lines[0:3] contain the intrinsic matrix
+        k_matrix = np.zeros((3, 3))
+        for i in range(3):
+            words = lines[i].split()
+            k_matrix[i] = [float(words[j]) for j in range(4)][:3]
             
-        f = open(pose_path)
-        lines = f.readlines()
-        f.close()
-        words = lines[9].split(' ')
-        k_matrix = np.asarray([float(words[i]) for i in range(2,18)]).reshape((4,4))[:3,:3]
+        # f = open(pose_path)
+        # lines = f.readlines()
+        # f.close()
+        # #words = lines[9].split(' ')
+        # #words = lines[4].split(' ')
+        # words = lines[3].split(' ')
+        # k_matrix = np.asarray([float(words[i]) for i in range(2,18)]).reshape((4,4))[:3,:3]
         return k_matrix
 
     def get_plane_para(self, target):

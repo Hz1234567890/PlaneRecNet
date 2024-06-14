@@ -1,3 +1,29 @@
+# It's for me
+### 2024-6-14
+#### 1
+我在./scannet/scans的目录下写了depth.py和color.py用来解决https://github.com/EryiXie/PlaneRecNet/issues/2中提到的一部分路径问题
+![Alt text](./imageForGit/image.png)
+intrinsics_color.py用于将intrinsics_color.txt写入到frame/intrinsic/下，并重命名
+![Alt text](./imageForGit/intrinsic_file.png)
+
+#### 2
+报错1
+
+      File "/home/hz/0mywork/PlaneRecNet/data/datasets.py", line 201, in get_camera_matrix
+      words = lines[4].split(' ')
+    IndexError: list index out of range
+
+进行了修改
+
+报错2
+
+      File "/home/hz/0mywork/PlaneRecNet/data/datasets.py", line 203, in <listcomp>
+      k_matrix = np.asarray([float(words[i]) for i in range(2,18)]).reshape((4,4))[:3,:3]
+  ValueError: could not convert string to float: ''
+
+怀疑是代码本身的问题，但还是要关注一下这句代码的作用，现在只是对代码进行了替换
+--2024-6-14end
+
 ### git小贴士
 
     git init
