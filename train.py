@@ -290,7 +290,7 @@ def train():
     data_loader = torch.utils.data.DataLoader(dataset, args.batch_size,
                                   num_workers=args.num_workers,
                                   shuffle=True, collate_fn=detection_collate,
-                                  pin_memory=True) # Add generator=torch.Generator(device='cuda') for pytorch >= 1.9
+                                  pin_memory=True,generator=torch.Generator(device='cuda')) # Add generator=torch.Generator(device='cuda') for pytorch >= 1.9
     
     save_path = lambda epoch, iteration: SavePath(cfg.name, epoch, iteration).get_path(root=args.save_folder)
     time_avg = MovingAverage()
