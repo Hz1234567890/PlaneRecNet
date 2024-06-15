@@ -7,15 +7,15 @@ intrinsics_color.py用于将intrinsics_color.txt写入到frame/intrinsic/下，�
 ![Alt text](./imageForGit/intrinsic_file.png)
 
 #### 2
-报错1
+[报错1](vscode://file/home/hz/0mywork/PlaneRecNet/data/datasets.py:210)
 
       File "/home/hz/0mywork/PlaneRecNet/data/datasets.py", line 201, in get_camera_matrix
       words = lines[4].split(' ')
     IndexError: list index out of range
 
-进行了修改
+进行了修改,现在报错的行被注释了
 
-报错2
+[报错2](vscode://file/home/hz/0mywork/PlaneRecNet/data/datasets.py:212)
 
       File "/home/hz/0mywork/PlaneRecNet/data/datasets.py", line 203, in <listcomp>
       k_matrix = np.asarray([float(words[i]) for i in range(2,18)]).reshape((4,4))[:3,:3]
