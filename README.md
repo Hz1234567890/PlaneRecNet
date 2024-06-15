@@ -1,4 +1,9 @@
 # It's for me
+scene0646_00中color下的000000.jpg改成534.jpg
+depth下的000000.png改为534.png
+
+scene0062_01中color下的000000.jpg改成568.jpg
+depth下的000000.png改为568.png
 ### 2024-6-14
 #### 1
 我在./scannet/scans的目录下写了depth.py和color.py用来解决https://github.com/EryiXie/PlaneRecNet/issues/2中提到的一部分路径问题
